@@ -26,8 +26,10 @@ app.get("/api/:date?", function (req, res) {
   const dateNewUnix = Number( req.params.date )
   
   // Check if the date is valid
-  if( !isNaN( dateNewString ) && dateNewString.toString() !== "Invalid Date" ){
-      //res.render('index', {dateNow: dateNew})
+  if(!req.params.date){
+      res.json( { unix: new Date().getTime(), utc: new Date().toUTCString() } )
+  }
+  else if( !isNaN( dateNewString ) && dateNewString.toString() !== "Invalid Date" ){
       res.json( { unix: dateNewString.getTime(), utc: dateNewString.toUTCString() } )
   } 
   else if( !isNaN( dateNewUnix ) && new Date(dateNewUnix).toString() !== "Invalid Date" ) {
