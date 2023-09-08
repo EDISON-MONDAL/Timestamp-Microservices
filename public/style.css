@@ -41,6 +41,14 @@ li {
   margin-bottom: 0.5em;
 }
 
-a {
+a, #openLinksButton {
 	color: #2574A9;
+}
+
+#openLinksButton {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-size: 1em;
+    cursor: pointer;
 }

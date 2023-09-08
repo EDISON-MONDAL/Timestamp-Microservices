@@ -14,19 +14,46 @@
     <div class="container">
       <h3>Example Usage:</h3>
       <ul>
-        <li><a href="api/2015-12-25">[project url]/api/2015-12-25</a></li>
-        <li><a href="api/1451001600000">[project url]/api/1451001600000</a></li>
+        <li><a href="api/2023-09-08" id="link_1">[project url]/api/2023-09-08</a></li>
+        <li><a href="api/1694131200000" id="link_2">[project url]/api/1694131200000</a></li>
       </ul>
 
       <h3>Example Output:</h3>
       <p>
-        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
+        <code>{"unix":1694131200000, "utc":"Fri, 08 Sep 2023 00:00:00 GMT"}</code>
       </p>
     </div>
     <div class="footer">
       <p>
-        By <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a>
+        By <button id="openLinksButton">EDISON MONDAL</button> For <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a>
       </p>
     </div>
   </body>
+
+  <script>
+    const domainDate = window.location.origin + "/api/2023-09-08"
+    
+    //document.querySelector('#link_1').href = domainDate
+    document.querySelector('#link_1').innerText = domainDate
+
+    const domainUnix = window.location.origin + "/api/1694131200000"
+    
+    //document.querySelector('#link_2').href = domainUnix
+    document.querySelector('#link_2').innerText = domainUnix
+
+
+    
+    const openLinksButton = document.getElementById("openLinksButton");
+
+    openLinksButton.addEventListener("click", function () {
+        // Open the first link in a new tab/window
+        window.open("https://web.facebook.com/profile.php?id=100009253036719", "_blank");
+
+        // Open the second link in a new tab/window with a slight delay
+        setTimeout(function () {
+          window.open("https://www.linkedin.com/in/edison-mondal-a60907216/", "_blank");
+        }, 100); // Delay 
+    });
+
+  </script>
 </html>
